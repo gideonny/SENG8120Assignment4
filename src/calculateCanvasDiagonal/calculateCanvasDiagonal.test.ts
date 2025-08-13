@@ -7,8 +7,13 @@ describe('calculateCanvasDiagonal', () => {
     expect(calculateCanvasDiagonal('5', '12')).toBeCloseTo(13);
   });
 
-  test('should return 0 for length and width of 0', () => {
-    expect(calculateCanvasDiagonal('0', '0')).toBe(0);
+  test('should return NaN for length and width of 0', () => {
+    expect(calculateCanvasDiagonal('0', '0')).toBeNaN();
+  });
+
+  test('should return NaN if either length or width is 0', () => {
+    expect(calculateCanvasDiagonal('0', '4')).toBeNaN();
+    expect(calculateCanvasDiagonal('3', '0')).toBeNaN();
   });
 
   test('should handle negative values correctly', () => {
