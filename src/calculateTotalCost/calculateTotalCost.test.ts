@@ -15,13 +15,13 @@ describe('calculateTotalCost', () => {
     expect(calculateTotalCost(0, 50)).toBe(50);
   });
 
-  test('should handle negative values correctly', () => {
-    expect(calculateTotalCost(-100, 50)).toBe(-50);
-    expect(calculateTotalCost(100, -50)).toBe(50);
-    expect(calculateTotalCost(-100, -50)).toBe(-150);
-  });
-
   test('should return 0 when both costs are 0', () => {
     expect(calculateTotalCost(0, 0)).toBe(0);
+  });
+
+  test('should return NaN for negative values', () => {
+    expect(calculateTotalCost(-100, 50)).toBeNaN();
+    expect(calculateTotalCost(100, -50)).toBeNaN();
+    expect(calculateTotalCost(-100, -50)).toBeNaN();
   });
 });
