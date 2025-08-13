@@ -7,18 +7,23 @@ describe('estimatePaintingTime', () => {
     expect(estimatePaintingTime(150, 15)).toBe(10);
   });
 
-  test('should return Infinity for painting speed of 0', () => {
-    expect(estimatePaintingTime(100, 0)).toBe(Infinity);
+  test('should return NaN for painting speed of 0', () => {
+    expect(estimatePaintingTime(100, 0)).toBeNaN();
   });
 
-  test('should handle area of 0 correctly', () => {
+  test('should return 0 for area of 0', () => {
     expect(estimatePaintingTime(0, 10)).toBe(0);
   });
 
-  test('should handle negative values correctly', () => {
-    expect(estimatePaintingTime(-100, 10)).toBe(-10);
-    expect(estimatePaintingTime(100, -10)).toBe(-10);
-    expect(estimatePaintingTime(-100, -10)).toBe(10);
+  test('should return NaN for negative area', () => {
+    expect(estimatePaintingTime(-100, 10)).toBeNaN();
+  });
+
+  test('should return NaN for negative painting speed', () => {
+    expect(estimatePaintingTime(100, -10)).toBeNaN();
+  });
+
+  test('should return NaN if both area and speed are negative', () => {
+    expect(estimatePaintingTime(-100, -10)).toBeNaN();
   });
 });
-
