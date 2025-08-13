@@ -15,9 +15,16 @@ describe('calculatePaintCost', () => {
     expect(calculatePaintCost(10, 0)).toBe(0);
   });
 
-  test('should handle negative values correctly', () => {
-    expect(calculatePaintCost(-10, 5)).toBe(-50);
-    expect(calculatePaintCost(10, -5)).toBe(-50);
-    expect(calculatePaintCost(-10, -5)).toBe(50);
+  test('should return NaN for negative values', () => {
+    expect(calculatePaintCost(-10, 5)).toBeNaN();
+    expect(calculatePaintCost(10, -5)).toBeNaN();
+    expect(calculatePaintCost(-10, -5)).toBeNaN();
+  });
+
+  test('should return NaN for non-numeric inputs', () => {
+    expect(calculatePaintCost('a' as any, 5)).toBeNaN();
+    expect(calculatePaintCost(10, 'b' as any)).toBeNaN();
+    expect(calculatePaintCost('a' as any, 'b' as any)).toBeNaN();
   });
 });
+
