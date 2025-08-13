@@ -1,6 +1,7 @@
 import calculateCanvasSize from "./calculateCanvasSize";
 import paintRequiredCalculator from "./paintRequiredCalculator";
 
+
 function main() {
   const area = calculateCanvasSize("10", "20");
   const coveragePerLiter = 11.4;
