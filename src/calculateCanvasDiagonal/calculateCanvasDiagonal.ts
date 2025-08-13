@@ -1,10 +1,11 @@
 export default function calculateCanvasDiagonal(length: string, width: string): number {
-    const l = parseFloat(length);
-    const w = parseFloat(width);
+  const l = parseFloat(length);
+  const w = parseFloat(width);
 
-    if (isNaN(l) || isNaN(w)) {
-      return NaN;
-    }
+  // Return NaN if inputs are not numbers or if any input is <= 0
+  if (isNaN(l) || isNaN(w) || l <= 0 || w <= 0) {
+    return NaN;
+  }
 
-    return Math.sqrt(Math.pow(l, 2) + Math.pow(w, 2));
+  return Math.sqrt(l ** 2 + w ** 2);
 }

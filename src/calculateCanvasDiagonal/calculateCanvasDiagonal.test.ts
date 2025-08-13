@@ -16,10 +16,10 @@ describe('calculateCanvasDiagonal', () => {
     expect(calculateCanvasDiagonal('3', '0')).toBeNaN();
   });
 
-  test('should handle negative values correctly', () => {
-    expect(calculateCanvasDiagonal('-3', '4')).toBeCloseTo(5);
-    expect(calculateCanvasDiagonal('3', '-4')).toBeCloseTo(5);
-    expect(calculateCanvasDiagonal('-3', '-4')).toBeCloseTo(5);
+  test('should return NaN for negative values', () => {
+    expect(calculateCanvasDiagonal('-3', '4')).toBeNaN();
+    expect(calculateCanvasDiagonal('3', '-4')).toBeNaN();
+    expect(calculateCanvasDiagonal('-3', '-4')).toBeNaN();
   });
 
   test('should handle non-numeric strings by returning NaN', () => {
