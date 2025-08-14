@@ -1,6 +1,6 @@
 # SENG8120 Modern Automated Testing 
 
-Version: Alpaca
+Version: Alpaca - Gideon Nyamuame 8883421 Assignment 4
 
 ## Purpose
 
@@ -38,6 +38,16 @@ npm start
 
 Note:  if you make a change in the production code, you must `build` & `start`.
 Otherwise, your changes will not be reflected.
+
+**Customizing Number of Copies**
+The main.ts file is where you can set the inputs for your paint calculation.
+To adjust the number of copies, open main.ts and modify the numberOfCopies variable:
+
+main.ts
+const length = "10";           // set this to the length of the canvas
+const width = "20";            // set this to the width of the canvas
+const numberOfCopies = 5000;   // set this to however many copies you want
+const coveragePerLiter = 11.4; // coverage of paint per liter//
 
 **Running The Tests**
 
