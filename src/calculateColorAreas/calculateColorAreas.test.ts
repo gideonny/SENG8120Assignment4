@@ -1,18 +1,13 @@
-// src/calculateColorAreas/calculateColorAreas.test.ts
 import calculateColorAreas, { ColorAreas } from './calculateColorAreas';
 
 describe('calculateColorAreas', () => {
   it('calculates areas correctly for valid numeric strings', () => {
     const result: ColorAreas = calculateColorAreas('9', '6');
     
-    // Total area = 9 * 6 = 54
     expect(result.totalArea).toBe(54);
     
-    // Each triangle = 0.5 * (9/3) * 6 = 0.5 * 3 * 6 = 9
-    // Two triangles = 18
     expect(result.sideTrianglesArea).toBe(18);
     
-    // Central area = total - triangles = 54 - 18 = 36
     expect(result.centralArea).toBe(36);
   });
 
