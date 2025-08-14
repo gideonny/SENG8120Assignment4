@@ -1,10 +1,5 @@
-export interface ColorAreas {
-  sideTrianglesArea: number;
-  centralArea: number;
-  totalArea: number;
-}
 
-export default function calculateColorAreas(length: string, width: string): ColorAreas {
+export default function calculateColorAreas(length: string, width: string) {
   const l = parseFloat(length);
   const w = parseFloat(width);
 
